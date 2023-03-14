@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+enum Gender { Male, Female, Other }
+
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
@@ -14,6 +16,7 @@ class _RegisterPageState extends State<RegisterPage> {
   String password = '';
   String confirmPassword = '';
   bool agreeTerms = true;
+  Gender? gender = Gender.Male;
 
   @override
   Widget build(BuildContext context) {
@@ -87,6 +90,40 @@ class _RegisterPageState extends State<RegisterPage> {
                     prefixIcon: Icon(Icons.lock),
                     labelText: 'Confirmar Senha',
                   ),
+                ),
+                Row(
+                  children: [
+                    Radio(
+                      value: Gender.Male,
+                      groupValue: gender,
+                      onChanged: (value) {
+                        setState(() {
+                          gender = value;
+                        });
+                      },
+                    ),
+                    const Text("Masculino"),
+                    Radio(
+                      value: Gender.Female,
+                      groupValue: gender,
+                      onChanged: (value) {
+                        setState(() {
+                          gender = value;
+                        });
+                      },
+                    ),
+                    const Text("Feminino"),
+                    Radio(
+                      value: Gender.Other,
+                      groupValue: gender,
+                      onChanged: (value) {
+                        setState(() {
+                          gender = value;
+                        });
+                      },
+                    ),
+                    const Text("Outro"),
+                  ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
