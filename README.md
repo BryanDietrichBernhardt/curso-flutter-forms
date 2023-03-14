@@ -1,3 +1,4 @@
-# textfield_app
+# Text Field App
 
-A new Flutter project.
+Aplicativo desenvolvido em Flutter para fins de estudos sobre os formulários.
+Nesse app temos uma página de login e cadastro.
